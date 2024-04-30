@@ -38,8 +38,8 @@ body * {
   border-width: 0;
 }
 
-.app {
-  max-width: 500px;
+#app {
+  max-width: 70vw;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -153,7 +153,7 @@ tbody .user a p {
   font-weight: bold;
 }
 
-tbody .remove {
+tbody .action button {
   border: none;
   background: none;
   color: red;
@@ -161,7 +161,7 @@ tbody .remove {
   transition: scale .4s linear;
 }
 
-tbody .remove:hover,
-tbody .remove:focus {
+tbody .action button:hover,
+tbody .action button:focus {
   scale: 1.5;
 }
