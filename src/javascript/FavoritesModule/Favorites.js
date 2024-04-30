@@ -16,6 +16,9 @@ export class Favorites {
 
   async add(username){
     try {
+      const userAlreadyExists = this.entries.find(entry => entry.login === username);
+      if(userAlreadyExists) throw new Error('User already exists');
+
       const user = await GithubUser.search(username);
       if(user.login === undefined) throw new Error('User not found, try another username');
 
