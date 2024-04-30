@@ -5,13 +5,12 @@ export class Favorites {
   }
 
   load(){
-    this.entries = [
-      {
-        login: 'apaolaoliveira',
-        name: 'Paola Oliveira',
-        public_repos: '50',
-        followers: '20'
-      }
-    ];
+    this.entries = JSON.parse(localStorage.getItem('@github-favorites:')) || [];
+  }
+
+  remove(user){
+    this.entries = this.entries
+      .filter((entry) => entry.login !== user.login);
+    this.update();
   }
 }

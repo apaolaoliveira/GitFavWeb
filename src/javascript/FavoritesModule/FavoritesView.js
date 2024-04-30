@@ -20,6 +20,10 @@ export class FavoritesView extends Favorites {
       row.querySelector('.user #username').textContent = user.login;
       row.querySelector('.github-info #repositories').textContent = user.public_repos;
       row.querySelector('.github-info #followers').textContent = user.followers;
+      row.querySelector('.action #remove-btn').onclick = () => {
+        const isOk = confirm('Are you sure about removing this favorite?');
+        if (isOk) this.remove(user);        
+      }
 
       this.tbody.append(row);
     });
