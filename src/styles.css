@@ -19,7 +19,7 @@
 body {
   font-size: 1.6rem;
   color: var(--text-color);
-  background-color: azure;
+  background-color: aliceblue;
 }
 
 body * {
@@ -40,6 +40,7 @@ body * {
 
 #app {
   max-width: 70vw;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -109,6 +110,10 @@ thead th:first-child {
 
 thead th:last-child {
   border-top-right-radius: 1rem;
+}
+
+thead tr th:first-child {
+  width: 27rem;
 }
 
 tbody td {

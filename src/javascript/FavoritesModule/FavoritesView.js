@@ -5,6 +5,15 @@ export class FavoritesView extends Favorites {
     super(root);
     this.tbody = this.root.querySelector('table tbody');
     this.updateTable();
+    this.onSearchClick();
+  }
+
+  onSearchClick(){
+    const searchButton = this.root.querySelector('#search-button');
+    searchButton.onclick = () => {
+      const { value } = this.root.querySelector('#search-input');
+      this.add(value);
+    }
   }
 
   updateTable(){
