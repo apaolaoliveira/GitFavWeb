@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/styles.css">
   <title>Github favorites</title>
 </head>
 <body>
@@ -28,12 +29,14 @@
       </thead>
       <tbody>
         <tr>
-          <td class="user">
-            <img src="https://github.com/apaolaoliveira.png" alt="user profile picture">
-            <a href="https://github.com/apaolaoliveira" target="_blank">
-              <p>Paola Oliveira</p>
-              <span>apaolaoliveira</span>
-            </a>
+          <td>
+            <div class="user">
+              <img src="https://github.com/apaolaoliveira.png" alt="user profile picture">
+              <a href="https://github.com/apaolaoliveira" target="_blank">
+                <p>Paola Oliveira</p>
+                <span>apaolaoliveira</span>
+              </a>
+            </div>
           </td>
           <td class="repositories">
             50
@@ -42,7 +45,7 @@
             20
           </td>
           <td>
-            <button>&times;</button>
+            <button class="remove">&times;</button>
           </td>
         </tr>
       </tbody>

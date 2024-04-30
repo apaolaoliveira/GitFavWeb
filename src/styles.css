@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,4 +8,160 @@
 
 :root {
   font-size: 62.5%;
+  --base-font: 'Poppins', sans-serif;
+  
+  --hue: 194;
+  --primary-color: hsl(var(--hue), 100%, 63%);
+  --primary-hover-color: hsl(var(--hue), 84%, 63%);
+  --text-color: #303030;
+}
+
+body {
+  font-size: 1.6rem;
+  color: var(--text-color);
+  background-color: azure;
+}
+
+body * {
+  font-family: var(--base-font);  
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.app {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2.5rem 0;
+}
+
+header h1 {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.search-wrapper input {
+  height: 3.2rem;
+  border: .1rem solid #ccc;
+  border-radius: .4rem 0 0 .4rem;
+  padding: 0 .8rem;
+}
+
+.search-wrapper button {
+  border-radius: 0 .4rem .4rem 0;
+  background-color: var(--primary-color);
+  border: none;
+  height: 3.2rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.search-wrapper button:hover,
+.search-wrapper button:focus {
+  filter: brightness(1.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+}
+
+table * {
+  font-size: 1.4rem;
+  color: var(--text-color);
+}
+
+thead th { 
+  background-color: var(--primary-color);
+  text-align: left;
+  font-weight: 500;
+  padding: 1.5rem;
+}
+
+thead th:first-child {
+  border-top-left-radius: 1rem;
+}
+
+thead th:last-child {
+  border-top-right-radius: 1rem;
+}
+
+tbody td {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #eee;
+}
+
+tbody tr:nth-child(odd){
+  background-color: #fff;
+}
+
+tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 1rem;
+}
+
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 1rem;
+}
+
+tbody .user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+tbody .user img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+tbody .user a {
+  text-decoration: none;
+}
+
+tbody .user a p {
+  font-weight: bold;
+}
+
+tbody .remove {
+  border: none;
+  background: none;
+  color: red;
+  cursor: pointer;
+  transition: scale .4s linear;
+}
+
+tbody .remove:hover,
+tbody .remove:focus {
+  scale: 1.5;
 }
