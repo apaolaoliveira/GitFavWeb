@@ -22,17 +22,37 @@ export class FavoritesView extends Favorites {
     this.entries.forEach(user => {
       const row = this.createRow();
 
-      row.querySelector('.user #avatar').src = `https://github.com/${user.login}.png`;
-      row.querySelector('.user #avatar').alt = `${user.name}'s profile picture`;
-      row.querySelector('.user #github').href = `https://github.com/${user.login}`;
-      row.querySelector('.user #name').textContent = user.name;
-      row.querySelector('.user #username').textContent = user.login;
-      row.querySelector('.github-info #repositories').textContent = user.public_repos;
-      row.querySelector('.github-info #followers').textContent = user.followers;
-      row.querySelector('.action #remove-btn').onclick = () => {
-        const isOk = confirm('Are you sure about removing this favorite?');
-        if (isOk) this.remove(user);        
-      }
+      const selectorsMap = {
+        name: '.user #name',
+        login: '.user #username',
+        githubLink: '.user #github',
+        avatar: '.user #avatar',
+        public_repos: '.github-info #repositories',
+        followers: '.github-info #followers',
+        removeBtn: '.action #remove-btn'
+      };
+
+      Object.entries(selectorsMap).forEach(([key, selector]) => {
+        const element = row.querySelector(selector);
+        switch (key) {
+          case 'avatar':
+            element.src = `https://github.com/${user.login}.png`;
+            element.alt = `${user.name}'s profile picture`;
+            break;
+          case 'githubLink':
+            element.href = `https://github.com/${user.login}`; 
+            break;
+          case 'removeBtn':
+            element.onclick = () => {
+              if (confirm('Are you sure about removing this favorite user?')) 
+                this.remove(user);
+            };
+            break;
+          default:
+            element.textContent = user[key];
+            break;
+        }
+      });
 
       this.tbody.append(row);
     });
@@ -40,8 +60,8 @@ export class FavoritesView extends Favorites {
 
   createRow(){
     const tableRow = document.createElement('tr');
-    tableRow.innerHTML = `
-      <td>
+    tableRow.innerHTML = 
+    ` <td>
         <div class="user">
           <img id="avatar" src="" alt="">
           <a id="github" href="" target="_blank">
@@ -58,7 +78,7 @@ export class FavoritesView extends Favorites {
       </td>
       <td class="action">
         <button id="remove-btn">&times;</button>
-      </td>`;
+      </td> `;
       
     return tableRow;
   }
