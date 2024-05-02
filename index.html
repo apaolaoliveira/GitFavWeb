@@ -10,12 +10,15 @@
 <body>
   <div id="app">
     <header>
-      <h1>Github favorites</h1>
+      <img class="logo" src="src/assets/gitFavLogo.svg" alt="logo">
 
       <div class="search-wrapper">
         <label for="search-input" class="sr-only">Github user</label>
-        <input type="text" id="search-input" placeholder="Github user">
-        <button id="search-button">&plus;</button>
+        <input type="text" id="search-input" placeholder="Github username">
+        <button id="search-button">
+          <img class="star" src="src/assets/favoriteStar.svg" alt="star">
+          favorite
+        </button>
       </div>
     </header>
 
@@ -25,7 +28,7 @@
           <th>User</th>
           <th>Public Repositories</th>
           <th>Followers</th>
-          <th></th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody></tbody>

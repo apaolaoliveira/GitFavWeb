@@ -41,12 +41,16 @@ export class FavoritesView extends Favorites {
             break;
           case 'githubLink':
             element.href = `https://github.com/${user.login}`; 
+            element.title = `${user.name}'s github link`
             break;
           case 'removeBtn':
             element.onclick = () => {
               if (confirm('Are you sure about removing this favorite user?')) 
                 this.remove(user);
             };
+            break;
+          case 'login':
+            element.textContent = `/${user.login}`;
             break;
           default:
             element.textContent = user[key];
@@ -77,7 +81,7 @@ export class FavoritesView extends Favorites {
         <span id="followers"></span>
       </td>
       <td class="action">
-        <button id="remove-btn">&times;</button>
+        <button id="remove-btn">remove</button>
       </td> `;
       
     return tableRow;
