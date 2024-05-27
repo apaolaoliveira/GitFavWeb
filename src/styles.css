@@ -184,11 +184,14 @@ tbody .action button {
   border: none;
   background: none;
   cursor: pointer;
+}
+
+tbody .action button span {
   color: var(--remove-red);
   transition: scale .4s linear;
 }
 
-tbody .action button:hover,
-tbody .action button:focus {
+tbody .action button span:hover,
+tbody .action button span:focus {
   scale: 1.1;
 }

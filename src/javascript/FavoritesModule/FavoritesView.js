@@ -81,7 +81,11 @@ export class FavoritesView extends Favorites {
         <span id="followers"></span>
       </td>
       <td class="action">
-        <button id="remove-btn">remove</button>
+        <button id="remove-btn" title="Remove from favorites">
+          <span class="material-symbols-outlined">
+            close
+          </span>
+        </button>
       </td> `;
       
     return tableRow;
